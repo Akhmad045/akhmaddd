@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('petugas', function (Blueprint $table) {
             $table->integer('id_petugas')->autoIncrement();
-            $table->string('username',25)->nullable();
-            $table->string('password',32)->nullable();
-            $table->string('nama_petugas',35)->nullable();
-            $table->enum('level',['admin,petugas'])->nullable();
-            $table->primary('id_petugas');
+            $table->string('username',25);
+            $table->string('password',32);
+            $table->string('nama_petugas',35);
+            $table->enum('level',['admin','petugas']);
             $table->timestamps();
     });
 }
