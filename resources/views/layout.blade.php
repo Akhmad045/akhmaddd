@@ -160,7 +160,6 @@
             <li class="menu-item">
               <a
                 href="siswa"
-                target="_blank"
                 class="menu-link">
                 <i class="menu-icon tf-icons bx bx-grid"></i>
                 <div data-i18n="Support">Siswa</div>

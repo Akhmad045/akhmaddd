@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin.utama');
 });
-Route::get('login',function(){
-    return view('admin.login');
-});
-Route::get('petugas',function(){
-    return view('admin.datapetugas');
-});
+Route::get('login',[AdminController::class,'login']);
+Route::post('login',[AdminController::class,'masuk']);
+
+Route::get('petugas',[AdminController::class,'petugas']);
+
+route::get('tambah',[AdminController::class,'tambah']);
+route::post('tambah',[AdminController::class,'simpan']);
+
+Route::get('siswa',[AdminController::class,'siswa']);

@@ -1,3 +1,6 @@
+@extends('layout')
+
+@section('isi')
 <!DOCTYPE html>
 
 <html
@@ -13,7 +16,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Login  |  SPP</title>
+    <title>Register Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
     <meta name="description" content="" />
 
@@ -54,7 +57,7 @@
     <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
-          <!-- Register -->
+          <!-- Register Card -->
           <div class="card">
             <div class="card-body">
               <!-- Logo -->
@@ -113,30 +116,22 @@
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Welcome to spp! 👋</h4>
-              @if (session('pesan'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('pesan') }}
-                        </div>
-                    @endif
+
               <form id="formAuthentication" class="mb-3" method="POST">
                 @csrf
                 <div class="mb-3">
-                  <label for="email" class="form-label">Username</label>
+                  <label for="username" class="form-label">Username</label>
                   <input
                     type="text"
                     class="form-control"
-                    name="username"
                     id="username"
                     name="username"
                     placeholder="Masukan username"
                     autofocus />
                 </div>
+            
                 <div class="mb-3 form-password-toggle">
-                  <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">Password</label>
-                    
-                  </div>
+                  <label class="form-label" for="password">Password</label>
                   <div class="input-group input-group-merge">
                     <input
                       type="password"
@@ -149,25 +144,28 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-me" />
-                    <label class="form-check-label" for="remember-me"> Remember Me </label>
-                  </div>
+                  <label for="email" class="form-label">Nama Petugas</label>
+                  <input type="text" class="form-control" id="email" name="nama_petugas" placeholder="Masukan Nama Petugas" />
                 </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Login</button>
+                    <label for="level" class="form-label">Level</label>
+                    <select class="form-select" id="floatingSelect" name="level" aria-label="Floating label select example">
+                        <option value="admin">Admin</option>
+                        <option value="petugas">Petugas</option>
+                      </select>
                 </div>
+                <button class="btn btn-primary d-grid w-100">Tambah</button>
               </form>
 
-              
             </div>
           </div>
-          <!-- /Register -->
+          <!-- Register Card -->
         </div>
       </div>
     </div>
 
-    
+    <!-- / Content -->
+
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
@@ -190,3 +188,4 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
+@endsection
