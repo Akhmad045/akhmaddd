@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard.utama');
+    return view('admin.utama');
+});
+Route::get('login',function(){
+    return view('admin.login');
+});
+Route::get('petugas',function(){
+    return view('admin.datapetugas');
 });
