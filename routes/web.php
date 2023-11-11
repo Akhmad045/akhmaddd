@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.utama');
-});
+Route::get('utama',[AdminController::class,'utama']);
 Route::get('login',[AdminController::class,'login']);
 Route::post('login',[AdminController::class,'masuk']);
 
@@ -26,3 +24,8 @@ route::get('tambah',[AdminController::class,'tambah']);
 route::post('tambah',[AdminController::class,'simpan']);
 
 Route::get('siswa',[AdminController::class,'siswa']);
+
+Route::get('pembayaran',[AdminController::class,'pembayaran']);   
+Route::post('pembayaran',[AdminController::class,'entri']);   
+
+Route::get('logout',[AdminController::class,'logout']);

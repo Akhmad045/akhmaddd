@@ -116,6 +116,17 @@
                 </a>
               </div>
               <!-- /Logo -->
+              @if (session('pesan'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('pesan') }}
+                            </div>
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-success" role="alert">
+                                Petugas gagal ditambahkan!!
+                            </div>
+                        @endif
+ 
 
               <form id="formAuthentication" class="mb-3" method="POST">
                 @csrf
@@ -186,6 +197,4 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-  </body>
-</html>
 @endsection

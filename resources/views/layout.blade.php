@@ -118,7 +118,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
             <li class="menu-item active open">
-              <a href="/" class="menu-link">
+              <a href="utama" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
               </a>
@@ -137,8 +137,7 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Form Pembayaran</span></li>
             <li class="menu-item">
               <a
-                href="transaksi"
-                target="_blank"
+                href="pembayaran"
                 class="menu-link">
                 <i class="menu-icon tf-icons bx bx-list-check"></i>
                 <div data-i18n="Form Validation">Pembayaran SPP</div>
@@ -248,7 +247,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="javascript:void(0);">
+                      <a class="dropdown-item" href="login">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
