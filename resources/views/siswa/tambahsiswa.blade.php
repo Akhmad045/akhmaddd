@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <!-- Logo -->
                         <div class="app-brand justify-content-center">
-                            <a href="" class="app-brand-link gap-2">
+                            <a href="index.html" class="app-brand-link gap-2">
                                 <span class="app-brand-logo demo">
                                     <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -70,51 +70,52 @@
                         @endif
                         @if ($errors->any())
                             <div class="alert alert-success" role="alert">
-                                Silahkan isi semua kolom Pembayaran!!
+                                Siswa gagal ditambahkan!!
                             </div>
                         @endif
+
 
                         <form id="formAuthentication" class="mb-3" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="username" class="form-label">ID Petugas</label>
-                                <input type="number" class="form-control" id="username" name="id_petugas"
-                                    placeholder="Masukan ID Petugas" autofocus />
+                                <label for="username" class="form-label">NISN</label>
+                                <input type="number" class="form-control" id="username" name="nisn"
+                                    placeholder="Masukan NISN" autofocus />
                             </div>
 
-
                             <div class="mb-3">
-                                <label for="email" class="form-label">NISN</label>
-                                <input type="text" class="form-control" id="email" name="nisn"
-                                    placeholder="Masukan Nama NISN" />
+                                <label class="form-label" for="password">NIS</label>
+                                <div class="input-group input-group-merge">
+                                    <input type="number" id="password" class="form-control" name="nis"
+                                        placeholder="Masukan NIS" />
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Tanggal Bayar</label>
-                                <input type="date" class="form-control" id="email" name="tgl_bayar"
-                                    placeholder="Masukan Tanggal" />
+                                <label for="email" class="form-label">Nama Siswa</label>
+                                <input type="text" class="form-control" id="email" name="nama"
+                                    placeholder="Masukan Nama Nama Siswa" />
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Bulan Dibayar</label>
-                                <input type="text" class="form-control" id="email" name="bulan_dibayar"
-                                    placeholder="Masukan Bulan" />
+                                <label for="email" class="form-label">ID Kelas</label>
+                                <input type="number" class="form-control" id="email" name="id_kelas"
+                                    placeholder="Masukan ID Kelas" />
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Tahun Dibayar</label>
-                                <input type="text" class="form-control" id="email" name="tahun_dibayar"
-                                    placeholder="Masukan Tahun" />
+                                <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="alamat" placeholder="Masukan Alamat Lengkap"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">No Telp</label>
+                                <input type="number" class="form-control" id="email" name="no_telp"
+                                    placeholder="Masukan No Telp" />
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">ID SPP</label>
                                 <input type="number" class="form-control" id="email" name="id_spp"
                                     placeholder="Masukan ID SPP" />
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Jumlah Bayar</label>
-                                <input type="number" class="form-control" id="email" name="jumlah_bayar"
-                                    placeholder="Masukan Jumlah" />
-                            </div>
-
                             <button class="btn btn-primary d-grid w-100">Tambah</button>
+                            
                         </form>
 
                     </div>

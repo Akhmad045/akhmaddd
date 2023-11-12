@@ -18,13 +18,23 @@ Route::get('utama',[AdminController::class,'utama']);
 Route::get('login',[AdminController::class,'login']);
 Route::post('login',[AdminController::class,'masuk']);
 
+// Route Petugas/Admin
 Route::get('petugas',[AdminController::class,'petugas']);
-
 route::get('tambah',[AdminController::class,'tambah']);
 route::post('tambah',[AdminController::class,'simpan']);
+route::get('edit/{id}',[AdminController::class,'edit']);
+route::post('edit',[AdminController::class,'ubah']);
+route::get('hapus/{id}',[AdminController::class,'hapus']);
 
+//Route Siswa
 Route::get('siswa',[AdminController::class,'siswa']);
+route::get('tambah/siswa',[AdminController::class,'tambah_siswa']);
+route::post('tambah/siswa',[AdminController::class,'simpan_siswa']);
+route::get('edit/siswa/{id}',[AdminController::class,'edit_siswa']);
+route::post('edit/siswa',[AdminController::class,'ubah_siswa']);
+route::get('hapus/siswa/{id}',[AdminController::class,'hapus_siswa']);
 
+//Route Pembayaran
 Route::get('pembayaran',[AdminController::class,'pembayaran']);   
 Route::post('pembayaran',[AdminController::class,'entri']);   
 

@@ -70,52 +70,52 @@
                         @endif
                         @if ($errors->any())
                             <div class="alert alert-success" role="alert">
-                                Silahkan isi semua kolom Pembayaran!!
+                                Petugas gagal diupdate!!
                             </div>
                         @endif
 
-                        <form id="formAuthentication" class="mb-3" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="username" class="form-label">ID Petugas</label>
-                                <input type="number" class="form-control" id="username" name="id_petugas"
-                                    placeholder="Masukan ID Petugas" autofocus />
-                            </div>
 
+                        @foreach ($data as $item)
+                            <form id="formAuthentication" class="mb-3" method="POST" action="{{ url('edit') }}">
+                                @csrf
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">ID Petugas</label>
+                                    <input type="number" class="form-control" id="username" name="id_petugas"
+                                        value="{{ $item->id_petugas }}" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username"
+                                        value="{{ $item->username }}" autofocus />
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="email" class="form-label">NISN</label>
-                                <input type="text" class="form-control" id="email" name="nisn"
-                                    placeholder="Masukan Nama NISN" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Tanggal Bayar</label>
-                                <input type="date" class="form-control" id="email" name="tgl_bayar"
-                                    placeholder="Masukan Tanggal" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Bulan Dibayar</label>
-                                <input type="text" class="form-control" id="email" name="bulan_dibayar"
-                                    placeholder="Masukan Bulan" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Tahun Dibayar</label>
-                                <input type="text" class="form-control" id="email" name="tahun_dibayar"
-                                    placeholder="Masukan Tahun" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">ID SPP</label>
-                                <input type="number" class="form-control" id="email" name="id_spp"
-                                    placeholder="Masukan ID SPP" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Jumlah Bayar</label>
-                                <input type="number" class="form-control" id="email" name="jumlah_bayar"
-                                    placeholder="Masukan Jumlah" />
-                            </div>
-
-                            <button class="btn btn-primary d-grid w-100">Tambah</button>
-                        </form>
+                                <div class="mb-3 form-password-toggle">
+                                    <label class="form-label" for="password">Password</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="password" id="password" class="form-control"
+                                            value="{{ $item->password }}" name="password"
+                                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                            aria-describedby="password" />
+                                        <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Nama Petugas</label>
+                                    <input type="text" class="form-control" id="email"
+                                        value="{{ $item->nama_petugas }}" name="nama_petugas"
+                                        placeholder="Masukan Nama Petugas" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="level" class="form-label">Level</label>
+                                    <select class="form-select" id="floatingSelect" name="level"
+                                        aria-label="Floating label select example">
+                                        <option value="admin">Admin</option>
+                                        <option value="petugas">Petugas</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary d-grid w-100">Update</button>
+                            </form>
+                        @endforeach
 
                     </div>
                 </div>

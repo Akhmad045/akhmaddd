@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\pembayaran;
 use App\Models\petugas;
+use App\Models\siswa;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -11,7 +12,7 @@ class AdminController extends Controller
     public function petugas()
     {
         $p = new Petugas();
-        return view("admin.datapetugas", ['data' => $p->all()]);
+        return view("petugas.datapetugas", ['data' => $p->all()]);
     }
     public function utama(){
         $p = new pembayaran();
@@ -19,11 +20,38 @@ class AdminController extends Controller
     }
     public function tambah()
     {
-        return view("admin.tambah");
+        return view("petugas.tambah");
     }
     public function siswa()
     {
-        return view("admin.siswa");
+        $s = new siswa();
+        return view("siswa.siswa", ["data"=> $s->all()]);
+    }
+    public function tambah_siswa(){
+        return view("siswa.tambahsiswa");
+    }
+    public function simpan_siswa(Request $request){
+        
+        $cek = $request->validate([
+            'nisn' => 'required|max:10',
+            'nis' => 'required|max:8',
+            'nama' => 'required|max:36',
+            'id_kelas' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required|max:13',
+            'id_spp' => 'required'
+        ]);
+        $m = new siswa();
+        $m->create([
+            'nisn'=>$request->nisn,
+            'nis'=>$request->nis,
+            'nama'=>$request->nama,
+            'id_kelas'=>$request->id_kelas,
+            'alamat'=>$request->alamat,
+            'no_telp'=>$request->no_telp,
+            'id_spp'=>$request->id_spp
+        ]);
+        return redirect('tambah/siswa')->with('pesan','Selamat, Siswa berhasil ditambahkan');
     }
     public function login()
     {
@@ -32,6 +60,22 @@ class AdminController extends Controller
     public function pembayaran()
     {
         return view("admin.pembayaran");
+    }
+    public function edit($id){
+        $p = petugas::select('*')->where('id_petugas', $id)->get();
+        return view('petugas.edit',['data'=> $p]);
+    }
+    public function ubah(Request $request){
+        $p = petugas::where('id_petugas',$request->id_petugas)->update([
+            'username'=>$request->username,
+            'password'=>$request->password,
+            'nama_petugas'=> $request->nama_petugas,
+        ]);
+        return redirect('petugas');
+    }
+    public function hapus($id){
+        $p = petugas::where('id_petugas',$id)->delete();
+        return back();
     }
     public function simpan(Request $request)
     {
