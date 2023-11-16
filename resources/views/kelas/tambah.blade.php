@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <!-- Logo -->
                         <div class="app-brand justify-content-center">
-                            <a href="" class="app-brand-link gap-2">
+                            <a href="index.html" class="app-brand-link gap-2">
                                 <span class="app-brand-logo demo">
                                     <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -70,53 +70,29 @@
                         @endif
                         @if ($errors->any())
                             <div class="alert alert-success" role="alert">
-                                Petugas gagal diupdate!!
+                                Kelas gagal ditambahkan!!
                             </div>
                         @endif
 
 
-                        @foreach ($data as $item)
-                            <form id="formAuthentication" class="mb-3" method="POST" action="{{ url('edit') }}">
-                                @csrf
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">ID Petugas</label>
-                                    <input type="number" class="form-control" id="username" name="id_petugas"
-                                        value="{{ $item->id_petugas }}" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username"
-                                        value="{{ $item->username }}" autofocus />
-                                </div>
+                        <form id="formAuthentication" class="mb-3" method="POST" action="{{url('tambah/kelas')}}">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nama Kelas</label>
+                                <input type="text" class="form-control" id="username" name="nama_kelas"
+                                    placeholder="Masukan Nama Kelas" autofocus />
+                            </div>
 
-                                <div class="mb-3 form-password-toggle">
-                                    <label class="form-label" for="password">Password</label>
-                                    <div class="input-group input-group-merge">
-                                        <input type="password" id="password" class="form-control"
-                                            value="{{ $item->password }}" name="password"
-                                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                            aria-describedby="password" />
-                                        <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Nama Petugas</label>
-                                    <input type="text" class="form-control" id="email"
-                                        value="{{ $item->nama_petugas }}" name="nama_petugas"
-                                        placeholder="Masukan Nama Petugas" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="level" class="form-label">Level</label>
-                                    <select class="form-select" id="floatingSelect" name="level"
-                                        aria-label="Floating label select example">
-                                        <option {{$item->level=="admin"?"selected":""}} value="admin">Admin</option>
-                                        <option {{$item->level=="petugas"?"selected":""}} value="petugas">Petugas</option>
-                                    </select>
-                                </div>
-                                <button class="btn btn-primary d-grid w-100">Update</button>
-                          
-                            </form>
-                        @endforeach
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Kompetensi Keahlian</label>
+                                <input type="text" class="form-control" id="email" name="kompetensi_keahlian"
+                                    placeholder="Masukan Kompetensi Keahlian" />
+                            </div>
+                            
+                            <button class="btn btn-primary d-grid w-100">Tambah</button>
+                            
+                        </form>
 
                     </div>
                 </div>

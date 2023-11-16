@@ -8,7 +8,7 @@
       <h4 class="py-3 mb-4"><span class="text-muted fw-light">Table/</span>Admin</h4>
 
       <!-- Basic Bootstrap Table -->
-      <a class="btn btn-outline-primary" href="tambah"
+      <a class="btn btn-outline-primary" href="tambah/kelas"
       ><i class="bx bx-plus-circle"></i> Tambah</a>
       <div class="card">
         
@@ -17,21 +17,17 @@
             <thead>
               <tr>
                 <th>NO</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Nama Petugas</th>
-                <th>Level</th>
+                <th>Nama Kelas</th>
+                <th>Kompetensi Keahlian</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
               @foreach ($data as $item)
               <tr>
-                <td>{{$item->id_petugas}}</td>
-                <td>{{$item->username}}</td>
-                <td>{{$item->password}}</td>
-                <td>{{$item->nama_petugas}}</td>
-                <td>{{$item->level}}</td>
+                <td>{{$item->id_kelas}}</td>
+                <td>{{$item->nama_kelas}}</td>
+                <td>{{$item->kompetensi_keahlian}}</td>
                 <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -39,10 +35,10 @@
                     </button>
                     <div class="dropdown-menu">
                       
-                      <a class="dropdown-item" href="{{url('edit/'.$item->id_petugas)}}"
+                      <a class="dropdown-item" href="{{url('edit/kelas/'.$item->id_kelas)}}"
                         ><i class="bx bx-edit-alt me-1"></i> Edit</a
                       >
-                      <a class="dropdown-item" href="hapus/{{$item->id_petugas}}" onclick="return confirm('Apakah anda yakin ingin menghapus petugas ini?');"
+                      <a class="dropdown-item" href="hapus/kelas/{{$item->id_kelas}}" onclick="return confirm('Apakah anda yakin ingin menghapus petugas ini?');"
                         ><i class="bx bx-trash me-1"></i> Delete</a
                       >
                     </div>

@@ -70,49 +70,28 @@
                         @endif
                         @if ($errors->any())
                             <div class="alert alert-success" role="alert">
-                                Petugas gagal diupdate!!
+                                Kelas gagal diupdate!!
                             </div>
                         @endif
 
 
                         @foreach ($data as $item)
-                            <form id="formAuthentication" class="mb-3" method="POST" action="{{ url('edit') }}">
+                            <form id="formAuthentication" class="mb-3" method="POST" action="{{ url('edit/siswa') }}">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="username" class="form-label">ID Petugas</label>
-                                    <input type="number" class="form-control" id="username" name="id_petugas"
-                                        value="{{ $item->id_petugas }}" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username"
-                                        value="{{ $item->username }}" autofocus />
+                                    <label for="username" class="form-label">Nama Kelas</label>
+                                    <input type="text" class="form-control" id="username" name="nama_kelas"
+                                        value="{{ $item->nama_kelas }}" autofocus />
                                 </div>
 
-                                <div class="mb-3 form-password-toggle">
-                                    <label class="form-label" for="password">Password</label>
-                                    <div class="input-group input-group-merge">
-                                        <input type="password" id="password" class="form-control"
-                                            value="{{ $item->password }}" name="password"
-                                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                            aria-describedby="password" />
-                                        <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                                    </div>
-                                </div>
+                                
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Nama Petugas</label>
                                     <input type="text" class="form-control" id="email"
-                                        value="{{ $item->nama_petugas }}" name="nama_petugas"
+                                        value="{{ $item->kompetensi_keahlian }}" name="kompetensi_keahlian"
                                         placeholder="Masukan Nama Petugas" />
                                 </div>
-                                <div class="mb-3">
-                                    <label for="level" class="form-label">Level</label>
-                                    <select class="form-select" id="floatingSelect" name="level"
-                                        aria-label="Floating label select example">
-                                        <option {{$item->level=="admin"?"selected":""}} value="admin">Admin</option>
-                                        <option {{$item->level=="petugas"?"selected":""}} value="petugas">Petugas</option>
-                                    </select>
-                                </div>
+                               
                                 <button class="btn btn-primary d-grid w-100">Update</button>
                           
                             </form>
