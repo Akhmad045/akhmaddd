@@ -7,8 +7,10 @@
     <div class="container-xxl flex-grow-1 container-p-y">
       <h4 class="py-3 mb-4"><span class="text-muted fw-light">Table/</span>Siswa</h4>
 
+      <a class="btn btn-outline-primary" href="tambah/siswa"
+      ><i class="bx bx-plus-circle"></i> Tambah</a>
       <!-- Basic Bootstrap Table -->
-      <div class="card">
+      <div class="card mt-3">
         <div class="table-responsive text-nowrap">
           <table class="table">
             <thead>
@@ -39,9 +41,7 @@
                       <i class="bx bx-dots-vertical-rounded"></i>
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="tambah/siswa"
-                        ><i class="bx bx-plus-circle"></i> Tambah</a
-                      >
+                      
                       <a class="dropdown-item" href="{{url('edit/'.$item->nisn)}}"
                         ><i class="bx bx-edit-alt me-1"></i> Edit</a
                       >

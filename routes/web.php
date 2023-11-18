@@ -1,6 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\kelas;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\petugas;
+use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\siswa;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,38 +19,37 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('profil',[AdminController::class,'profil']);
 Route::get('utama',[AdminController::class,'utama']);
 Route::get('login',[AdminController::class,'login']);
 Route::post('login',[AdminController::class,'masuk']);
 
 // Route Petugas/Admin
-Route::get('petugas',[AdminController::class,'petugas']);
-route::get('tambah',[AdminController::class,'tambah']);
-route::post('tambah',[AdminController::class,'simpan']);
-route::get('edit/{id}',[AdminController::class,'edit']);
-route::post('edit',[AdminController::class,'ubah']);
-route::get('hapus/{id}',[AdminController::class,'hapus']);
+Route::get('petugas',[PetugasController::class,'petugas']);
+route::get('tambah',[PetugasController::class,'tambah']);
+route::post('tambah',[PetugasController::class,'simpan']);
+route::get('edit/{id}',[PetugasController::class,'edit']);
+route::post('edit',[PetugasController::class,'ubah']);
+route::get('hapus/{id}',[PetugasController::class,'hapus']);
 
 //Route Siswa
-Route::get('siswa',[AdminController::class,'siswa']);
-route::get('tambah/siswa',[AdminController::class,'tambah_siswa']);
-route::post('tambah/siswa',[AdminController::class,'simpan_siswa']);
-route::get('edit/siswa/{id}',[AdminController::class,'edit_siswa']);
-route::post('edit/siswa',[AdminController::class,'ubah_siswa']);
-route::get('hapus/siswa/{id}',[AdminController::class,'hapus_siswa']);
+Route::get('siswa',[SiswaController::class,'siswa']);
+route::get('tambah/siswa',[SiswaController::class,'tambah_siswa']);
+route::post('tambah/siswa',[SiswaController::class,'simpan_siswa']);
+route::get('edit/siswa/{id}',[SiswaController::class,'edit_siswa']);
+route::post('edit/siswa',[SiswaController::class,'ubah_siswa']);
+route::get('hapus/siswa/{id}',[SiswaController::class,'hapus_siswa']);
 
 //Route Pembayaran
 Route::get('pembayaran',[AdminController::class,'pembayaran']);   
 Route::post('pembayaran',[AdminController::class,'entri']);   
 
 //Route Kelas
-Route::get('kelas',[AdminController::class,'kelas']);
-Route::get('tambah/kelas',[AdminController::class,'tambah_kelas']);
-Route::post('tambah/kelas',[AdminController::class,'simpan_kelas']);
-Route::get('edit/kelas/{id}',[AdminController::class,'edit_kelas']);
-Route::post('edit/kelas',[AdminController::class,'ubah_kelas']);
-Route::get('hapus/siswa/{id}',[AdminController::class,'hapus_kelas']);
+Route::get('kelas',[KelasController::class,'kelas']);
+Route::get('tambah/kelas',[KelasController::class,'tambah_kelas']);
+Route::post('tambah/kelas',[KelasController::class,'simpan_kelas']);
+Route::get('edit/kelas/{id}',[KelasController::class,'edit_kelas']);
+Route::post('edit/kelas/{id}',[KelasController::class,'ubah_kelas']);
+Route::get('hapus/kelas/{id}',[KelasController::class,'hapus_kelas']);
 
 // Logout
 Route::get('logout',[AdminController::class,'logout']);

@@ -75,27 +75,26 @@
                         @endif
 
 
-                        @foreach ($data as $item)
-                            <form id="formAuthentication" class="mb-3" method="POST" action="{{ url('edit/siswa') }}">
+                        
+                            <form id="formAuthentication" class="mb-3" method="POST" ">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Nama Kelas</label>
                                     <input type="text" class="form-control" id="username" name="nama_kelas"
-                                        value="{{ $item->nama_kelas }}" autofocus />
+                                        value="{{ $data->nama_kelas }}" autofocus />
                                 </div>
 
                                 
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Nama Petugas</label>
+                                    <label for="email" class="form-label">Kompetensi Keahlian</label>
                                     <input type="text" class="form-control" id="email"
-                                        value="{{ $item->kompetensi_keahlian }}" name="kompetensi_keahlian"
-                                        placeholder="Masukan Nama Petugas" />
+                                        value="{{ $data->kompetensi_keahlian }}" name="kompetensi_keahlian"
+                                        placeholder="Masukan Kompetensi Keahlian" />
                                 </div>
                                
                                 <button class="btn btn-primary d-grid w-100">Update</button>
                           
-                            </form>
-                        @endforeach
+                            </form
 
                     </div>
                 </div>
@@ -103,17 +102,15 @@
             </div>
         </div>
     </div>
-
-    <!-- / Content -->
-
-    <!-- Core JS -->
+    <div class="content-wrapper">
+        <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/assets/vendor/js/bootstrap.js"></script>
+    <script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/assets/vendor/js/menu.js"></script>
 
     <!-- endbuild -->
 
@@ -126,4 +123,4 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-@endsection
+    @endsection

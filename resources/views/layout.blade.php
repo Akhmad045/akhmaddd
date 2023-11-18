@@ -27,24 +27,24 @@
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="/assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="/assets/js/config.js"></script>
   </head>
 
   <body>
@@ -118,7 +118,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
             <li class="menu-item active open">
-              <a href="utama" class="menu-link">
+              <a href="{{ url('utama') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
               </a>
@@ -127,7 +127,7 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Data Petugas</span></li>
             <!-- Forms -->
             <li class="menu-item">
-              <a href="petugas" class="menu-link">
+              <a href="{{ url('petugas') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-table"></i>
                 <div data-i18n="Tables">Data Petugas</div>
               </a>
@@ -137,7 +137,7 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Form Pembayaran</span></li>
             <li class="menu-item">
               <a
-                href="pembayaran"
+                href="{{ url('pembayaran') }}"
                 class="menu-link">
                 <i class="menu-icon tf-icons bx bx-list-check"></i>
                 <div data-i18n="Form Validation">Pembayaran SPP</div>
@@ -148,7 +148,7 @@
             
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Form Kelas</span></li>
             <li class="menu-item">
-              <a href="kelas" class="menu-link">
+              <a href="{{ url('kelas') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-grid"></i>
                 <div data-i18n="Tables">Kelas</div>
               </a>
@@ -158,7 +158,7 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Form Siswa</span></li>
             <li class="menu-item">
               <a
-                href="siswa"
+                href="{{ url('siswa') }}"
                 class="menu-link">
                 <i class="menu-icon tf-icons bx bx-grid"></i>
                 <div data-i18n="Support">Siswa</div>
@@ -166,7 +166,7 @@
             </li>
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Form SPP</span></li>
             <li class="menu-item">
-              <a href="spp" class="menu-link">
+              <a href="{{ url('spp') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-grid"></i>
                 <div data-i18n="Tables">SPP</div>
               </a>

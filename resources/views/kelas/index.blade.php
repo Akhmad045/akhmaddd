@@ -10,7 +10,8 @@
       <!-- Basic Bootstrap Table -->
       <a class="btn btn-outline-primary" href="tambah/kelas"
       ><i class="bx bx-plus-circle"></i> Tambah</a>
-      <div class="card">
+      <div class="card mt-3">
+        
         
         <div class="table-responsive text-nowrap">
           <table class="table">                
@@ -38,7 +39,7 @@
                       <a class="dropdown-item" href="{{url('edit/kelas/'.$item->id_kelas)}}"
                         ><i class="bx bx-edit-alt me-1"></i> Edit</a
                       >
-                      <a class="dropdown-item" href="hapus/kelas/{{$item->id_kelas}}" onclick="return confirm('Apakah anda yakin ingin menghapus petugas ini?');"
+                      <a class="dropdown-item" href="hapus/kelas/{{$item->id_kelas}}" onclick="return confirm('Apakah anda yakin ingin menghapus kelas ini?');"
                         ><i class="bx bx-trash me-1"></i> Delete</a
                       >
                     </div>

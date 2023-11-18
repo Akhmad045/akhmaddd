@@ -7,10 +7,10 @@
     <div class="container-xxl flex-grow-1 container-p-y">
       <h4 class="py-3 mb-4"><span class="text-muted fw-light">Table/</span>Admin</h4>
 
-      <!-- Basic Bootstrap Table -->
       <a class="btn btn-outline-primary" href="tambah"
       ><i class="bx bx-plus-circle"></i> Tambah</a>
-      <div class="card">
+      <!-- Basic Bootstrap Table -->
+      <div class="card mt-3" >
         
         <div class="table-responsive text-nowrap">
           <table class="table">                
