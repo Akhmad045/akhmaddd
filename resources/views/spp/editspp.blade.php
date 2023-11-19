@@ -76,32 +76,32 @@
 
 
                         
-                            <form id="formAuthentication" class="mb-3" method="POST" ">
+                            <form id="formAuthentication" class="mb-3" method="POST" >
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="username" class="form-label">Nama Kelas</label>
-                                    <input type="text" class="form-control" id="username" name="nama_kelas"
-                                        value="{{ $data->nama_kelas }}" autofocus />
+                                    <label for="username" class="form-label">Tahun</label>
+                                    <input type="number" class="form-control" id="username" name="tahun"
+                                        value="{{ $data->tahun }}" autofocus />
                                 </div>
 
                                 
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Kompetensi Keahlian</label>
-                                    <input type="text" class="form-control" id="email"
-                                        value="{{ $data->kompetensi_keahlian }}" name="kompetensi_keahlian"
-                                        placeholder="Masukan Kompetensi Keahlian" />
+                                    <label for="email" class="form-label">Nominal</label>
+                                    <input type="number" class="form-control" id="email"
+                                        value="{{ $data->nominal }}" name="nominal"
+                                        placeholder="Masukan Nominal" />
                                 </div>
                                
                                 <button class="btn btn-primary d-grid w-100">Update</button>
                           
                             </form
-
-                        </div>
+                        
                     </div>
-                    <!-- Register Card -->
                 </div>
+                <!-- Register Card -->
             </div>
         </div>
+    </div>
     <div class="content-wrapper">
         <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

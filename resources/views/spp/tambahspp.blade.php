@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <!-- Logo -->
                         <div class="app-brand justify-content-center">
-                            <a href="" class="app-brand-link gap-2">
+                            <a href="index.html" class="app-brand-link gap-2">
                                 <span class="app-brand-logo demo">
                                     <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -70,47 +70,47 @@
                         @endif
                         @if ($errors->any())
                             <div class="alert alert-success" role="alert">
-                                Kelas gagal diupdate!!
+                                SPP gagal ditambahkan!!
                             </div>
                         @endif
 
 
-                        
-                            <form id="formAuthentication" class="mb-3" method="POST" ">
-                                @csrf
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">Nama Kelas</label>
-                                    <input type="text" class="form-control" id="username" name="nama_kelas"
-                                        value="{{ $data->nama_kelas }}" autofocus />
-                                </div>
+                        <form id="formAuthentication" class="mb-3" method="POST" action="{{url('tambah/spp')}}">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Tahun</label>
+                                <input type="number" class="form-control" id="username" name="tahun"
+                                    placeholder="Masukan Tahun" autofocus />
+                            </div>
 
-                                
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Kompetensi Keahlian</label>
-                                    <input type="text" class="form-control" id="email"
-                                        value="{{ $data->kompetensi_keahlian }}" name="kompetensi_keahlian"
-                                        placeholder="Masukan Kompetensi Keahlian" />
-                                </div>
-                               
-                                <button class="btn btn-primary d-grid w-100">Update</button>
-                          
-                            </form
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Nominal</label>
+                                <input type="number" class="form-control" id="email" name="nominal"
+                                    placeholder="Masukan Nominal" />
+                            </div>
+                            
+                            <button class="btn btn-primary d-grid w-100">Tambah</button>
+                            
+                        </form>
 
-                        </div>
                     </div>
-                    <!-- Register Card -->
                 </div>
+                <!-- Register Card -->
             </div>
         </div>
-    <div class="content-wrapper">
-        <!-- Core JS -->
+    </div>
+
+    <!-- / Content -->
+
+    <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
-    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="/assets/vendor/libs/popper/popper.js"></script>
-    <script src="/assets/vendor/js/bootstrap.js"></script>
-    <script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="/assets/vendor/js/menu.js"></script>
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../assets/vendor/js/menu.js"></script>
 
     <!-- endbuild -->
 
@@ -123,4 +123,4 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    @endsection
+@endsection
