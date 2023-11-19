@@ -42,10 +42,10 @@
                     </button>
                     <div class="dropdown-menu">
                       
-                      <a class="dropdown-item" href="{{url('edit/'.$item->nisn)}}"
+                      <a class="dropdown-item" href="{{url('edit/siswa/'.$item->nisn)}}"
                         ><i class="bx bx-edit-alt me-1"></i> Edit</a
                       >
-                      <a class="dropdown-item" href="hapus/{{$item->nisn}}" onclick="return confirm('Apakah anda yakin ingin menghapus petugas ini?');"
+                      <a class="dropdown-item" href="hapus/siswa/{{$item->nisn}}" onclick="return confirm('Apakah anda yakin ingin menghapus petugas ini?');"
                         ><i class="bx bx-trash me-1"></i> Delete</a
                       >
                     </div>

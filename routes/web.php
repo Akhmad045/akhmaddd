@@ -7,6 +7,7 @@ use App\Http\Controllers\petugas;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\siswa;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\SppController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,7 +37,7 @@ Route::get('siswa',[SiswaController::class,'siswa']);
 route::get('tambah/siswa',[SiswaController::class,'tambah_siswa']);
 route::post('tambah/siswa',[SiswaController::class,'simpan_siswa']);
 route::get('edit/siswa/{id}',[SiswaController::class,'edit_siswa']);
-route::post('edit/siswa',[SiswaController::class,'ubah_siswa']);
+route::post('edit/siswa/{id}',[SiswaController::class,'ubah_siswa']);
 route::get('hapus/siswa/{id}',[SiswaController::class,'hapus_siswa']);
 
 //Route Pembayaran
@@ -50,6 +51,15 @@ Route::post('tambah/kelas',[KelasController::class,'simpan_kelas']);
 Route::get('edit/kelas/{id}',[KelasController::class,'edit_kelas']);
 Route::post('edit/kelas/{id}',[KelasController::class,'ubah_kelas']);
 Route::get('hapus/kelas/{id}',[KelasController::class,'hapus_kelas']);
+
+//Route SPP
+Route::get('spp',[SppController::class,'spp']);
+Route::get('tambah/spp',[SppController::class,'tambah_spp']);
+Route::post('tambah/spp',[SppController::class,'simpan_spp']);
+Route::get('edit/spp/{id}',[SppController::class,'edit_spp']);
+Route::post('edit/spp/{id}',[SppController::class,'ubah_spp']);
+Route::get('hapus/spp/{id}',[SppController::class,'hapus_spp']);
+
 
 // Logout
 Route::get('logout',[AdminController::class,'logout']);
