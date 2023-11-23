@@ -82,20 +82,24 @@
                                 placeholder="Masukan NISN" autofocus />
                         </div>
                         <div class="mb-3">
+                            <label for="email" class="form-label">NIS</label>
+                            <input type="text" class="form-control" id="email" name="nis" value="{{$data->nis}}"
+                            placeholder="Masukan NIS" />
+                        </div>
+                        
+                        <div class="mb-3">
                             <label for="username" class="form-label">NAMA LENGKAP</label>
                             <input type="text" class="form-control" id="username" name="nama" 
                             value="{{$data->nama}}"                            placeholder="Masukan Nama Lengkap"  />
                         </div>                        
                         <div class="mb-3">
-                            <label for="email" class="form-label">NIS</label>
-                            <input type="text" class="form-control" id="email" name="nis" value="{{$data->nis}}"
-                                placeholder="Masukan NIS" />
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="email" class="form-label">ID Kelas</label>
-                            <input type="id" class="form-control" id="email" name="id_kelas" value="{{$data->id_kelas}}"
-                                placeholder="Masukan ID Kelas" />
+                            <label for="level" class="form-label">Kelas</label>
+                            <select class="form-select" id="floatingSelect" name="id_kelas" aria-label="Floating label select example">
+                                @foreach ($datakelas as $item)
+                                <option value="{{$item->id_kelas}}">{{$item->nama_kelas}}-{{$item->kompetensi_keahlian}}</option>
+                                
+                                @endforeach
+                              </select>
                         </div>
                         
                         <div class="mb-3">

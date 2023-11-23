@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kelas;
 use App\Models\siswa;
+use App\Models\spp;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -10,10 +12,12 @@ class SiswaController extends Controller
     public function siswa()
     {
         $s = new siswa();
-        return view("siswa.siswa", ["data"=> $s->all()]);
+        return view("siswa.siswa", ["data"=> $s->with('kelas')->with('spp')->get()]);
     }
     public function tambah_siswa(){
-        return view("siswa.tambahsiswa");
+        $s = new kelas();
+        $p = new spp();
+        return view("siswa.tambahsiswa",['data'=>$s->all(),'dataspp'=>$p->all()]);
     }
     public function simpan_siswa(Request $request){
         
@@ -32,7 +36,10 @@ class SiswaController extends Controller
     }
     public function edit_siswa($id){
         $p = siswa::select('*')->where('nisn', $id)->first();
-        return view('siswa.editsiswa',['data'=> $p]);
+        $k = new kelas();
+        $s = new spp();
+        
+        return view('siswa.editsiswa',['data'=> $p, 'datakelas'=>$k->all(), 'dataspp'=>$s->all()]);
     }
     public function ubah_siswa(Request $request, $id){
         $tes = $request->validate([

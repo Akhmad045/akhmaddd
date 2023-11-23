@@ -12,16 +12,16 @@
       <!-- Basic Bootstrap Table -->
       <div class="card mt-3">
         <div class="table-responsive text-nowrap">
-          <table class="table">
+          <table class="table" id="tab">
             <thead>
               <tr>
                 <th>NISN</th>
                 <th>NIS</th>
                 <th>Nama</th>
-                <th>ID Kelas</th>
+                <th>Kelas</th>
                 <th>Alamat</th>
                 <th>No Telp</th>
-                <th>ID SPP</th>
+                <th>SPP</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -31,10 +31,10 @@
                 <td>{{$item->nisn}}</td>
                 <td>{{$item->nis}}</td>
                 <td>{{$item->nama}}</td>
-                <td>{{$item->id_kelas}}</td>
+                <td>{{$item->kelas->nama_kelas}}-{{$item->kelas->kompetensi_keahlian}}</td>
                 <td>{{$item->alamat}}</td>
                 <td>{{$item->no_telp}}</td>
-                <td>{{$item->id_spp}}</td>
+                <td>{{$item->spp->tahun}}-{{$item->nominal}}</td>
                 <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -75,6 +75,9 @@
                                                                                                                                                    
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->
+
+ 
+
 
 <script src="../assets/vendor/libs/jquery/jquery.js"></script>
 <script src="../assets/vendor/libs/popper/popper.js"></script>

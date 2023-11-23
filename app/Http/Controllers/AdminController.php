@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\pembayaran;
 use App\Models\petugas;
 use App\Models\siswa;
+use App\Models\spp;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -30,8 +31,7 @@ class AdminController extends Controller
         $cek = $cek->where('username', $request->input('username'))->where('password', $request->input('password'));
         if ($cek->exists()) {
             session([
-                'username' => $request->input('username'),
-                'password' => ($request->input('password'))
+                'datapetugas'=> $cek->first()
             ]);
             return redirect('utama');
         }
@@ -40,6 +40,8 @@ class AdminController extends Controller
     //pembayaran
     public function pembayaran()
     {
+        $s = new siswa();
+        $p = new spp();
         return view("admin.pembayaran");
     }
     public function entri(Request $request)

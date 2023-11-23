@@ -104,9 +104,13 @@
                                     placeholder="Masukan Tahun" />
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">ID SPP</label>
-                                <input type="number" class="form-control" id="email" name="id_spp"
-                                    placeholder="Masukan ID SPP" />
+                                <label for="level" class="form-label">SPP</label>
+                                <select class="form-select" id="floatingSelect" name="id_spp" aria-label="Floating label select example">
+                                    @foreach ($dataspp as $item)
+                                    <option value="{{$item->id_spp}}">{{$item->tahun}}-{{$item->nominal}}</option>
+                            
+                                    @endforeach
+                                  </select>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Jumlah Bayar</label>

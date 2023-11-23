@@ -92,9 +92,13 @@
                         </div>
                         
                         <div class="mb-3">
-                            <label for="email" class="form-label">ID Kelas</label>
-                            <input type="id" class="form-control" id="email" name="id_kelas"
-                                placeholder="Masukan ID Kelas" />
+                            <label for="level" class="form-label">Kelas</label>
+                            <select class="form-select" id="floatingSelect" name="id_kelas" aria-label="Floating label select example">
+                                @foreach ($data as $item)
+                                <option value="{{$item->id_kelas}}">{{$item->nama_kelas}}-{{$item->kompetensi_keahlian}}</option>
+                        
+                                @endforeach
+                              </select>
                         </div>
                         
                         <div class="mb-3">
@@ -110,9 +114,13 @@
                         </div>
                         
                         <div class="mb-3">
-                            <label for="email" class="form-label">ID SPP</label>
-                            <input type="number" class="form-control" id="email" name="id_spp"
-                                placeholder="Masukan ID Spp" />
+                            <label for="level" class="form-label">SPP</label>
+                            <select class="form-select" id="floatingSelect" name="id_spp" aria-label="Floating label select example">
+                                @foreach ($dataspp as $item)
+                                <option value="{{$item->id_spp}}">{{$item->tahun}}-{{$item->nominal}}</option>
+                        
+                                @endforeach
+                              </select>
                         </div>
                         
                         <button class="btn btn-primary d-grid w-100">Tambah</button>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('nisn',10);
             $table->string('nis',8);
             $table->string('nama',35);
-            $table->integer('id_kelas');
+            $table->string('id_kelas');
             $table->text('alamat');
             $table->string('no_telp',13);
             $table->integer('id_spp');

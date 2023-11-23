@@ -23,4 +23,8 @@ class kelas extends Model
      // Setting kolom yang dapat diisi dengan massal
  
      protected $guarded=[];
+
+     public function siswa(){
+        return $this->hasMany(siswa::class, 'id_kelas','id_kelas');
+     }
 }

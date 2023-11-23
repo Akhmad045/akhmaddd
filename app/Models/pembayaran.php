@@ -22,4 +22,11 @@ class pembayaran extends Model
      // Setting kolom yang dapat diisi dengan massal
  
      protected $guarded=[];
+
+     public function siswa(){
+        return $this->belongsTo(siswa::class,'nisn');
+     }
+     public function sis_spp(){
+        return $this->belongsTo(siswa::class,'id_spp');
+     }
 }
