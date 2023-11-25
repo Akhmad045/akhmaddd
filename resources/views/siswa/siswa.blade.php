@@ -31,10 +31,10 @@
                 <td>{{$item->nisn}}</td>
                 <td>{{$item->nis}}</td>
                 <td>{{$item->nama}}</td>
-                <td>{{$item->kelas->nama_kelas}}-{{$item->kelas->kompetensi_keahlian}}</td>
+                <td>{{$item->kelas->nama_kelas}}</td>
                 <td>{{$item->alamat}}</td>
                 <td>{{$item->no_telp}}</td>
-                <td>{{$item->spp->tahun}}-{{$item->nominal}}</td>
+                <td>{{$item->spp->tahun}}-{{$item->spp->nominal}}</td>
                 <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

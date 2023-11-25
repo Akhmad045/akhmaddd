@@ -76,30 +76,45 @@
 
                         <form id="formAuthentication" class="mb-3" method="POST">
                             @csrf
-                            <div class="mb-3">
-                                <label for="username" class="form-label">ID Petugas</label>
-                                <input type="number" class="form-control" id="username" name="id_petugas"
-                                    placeholder="Masukan ID Petugas" autofocus />
-                            </div>
+                            
 
 
                             <div class="mb-3">
-                                <label for="email" class="form-label">NISN</label>
-                                <input type="text" class="form-control" id="email" name="nisn"
-                                    placeholder="Masukan Nama NISN" />
+                                <label for="level" class="form-label">NISN</label>
+                                <select class="form-select" id="floatingSelect" name="nisn" aria-label="Floating label select example">
+                                    @foreach ($datasiswa as $item)
+                                    <option value="{{$item->nisn}}">{{$item->nama}}</option>
+                            
+                                    @endforeach
+                                  </select>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Tanggal Bayar</label>
                                 <input type="date" class="form-control" id="email" name="tgl_bayar"
                                     placeholder="Masukan Tanggal" />
                             </div>
+                            
                             <div class="mb-3">
-                                <label for="email" class="form-label">Bulan Dibayar</label>
-                                <input type="text" class="form-control" id="email" name="bulan_dibayar"
-                                    placeholder="Masukan Bulan" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Tahun Dibayar</label>
+                                <label for="level" class="form-label">Bulan</label>
+                                <select class="form-select" id="floatingSelect" name="bulan_dibayar" aria-label="Floating label select example">
+                                    
+                                    <option value="januari">Januari</option>
+                                    <option value="februari">Februari</option>
+                                    <option value="maret">Maret</option>
+                                    <option value="april">April</option>
+                                    <option value="mei">Mei</option>
+                                    <option value="juni">Juni</option>
+                                    <option value="juli">Juli</option>
+                                    <option value="agustus">Agustus</option>
+                                    <option value="september">September</option>
+                                    <option value="oktober">Oktober</option>
+                                    <option value="november">November</option>
+                                    <option value="desember">Desember</option>
+                            
+                                    
+                                  </select>
+                            </div><div class="mb-3">
+                                <label for="email" class="form-label">Tahun</label>
                                 <input type="text" class="form-control" id="email" name="tahun_dibayar"
                                     placeholder="Masukan Tahun" />
                             </div>

@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('utama',[AdminController::class,'utama']);
 Route::get('login',[AdminController::class,'login']);
 Route::post('login',[AdminController::class,'masuk']);
+Route::get('history/pembayaran',[AdminController::class,'history']);
 
 // Route Petugas/Admin
 Route::get('petugas',[PetugasController::class,'petugas']);

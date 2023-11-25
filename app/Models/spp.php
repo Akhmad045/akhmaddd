@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class spp extends Model
 {
@@ -23,7 +24,7 @@ class spp extends Model
  
      protected $guarded=[];
 
-     public function siswa()
+     public function siswa(): HasMany
      {
         return $this->hasMany(siswa::class,'id_spp','id_spp');
      }

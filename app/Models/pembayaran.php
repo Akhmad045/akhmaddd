@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class pembayaran extends Model
 {
@@ -23,10 +24,16 @@ class pembayaran extends Model
  
      protected $guarded=[];
 
-     public function siswa(){
-        return $this->belongsTo(siswa::class,'nisn');
+     public function siswa(): BelongsTo
+     {
+        return $this->belongsTo(siswa::class,'nisn', 'nisn');
      }
-     public function sis_spp(){
-        return $this->belongsTo(siswa::class,'id_spp');
+     public function spp(): BelongsTo
+     {
+        return $this->belongsTo(siswa::class,'id_spp', 'id_spp');
+     }
+     public function petugas(): BelongsTo
+     {
+      return $this->belongsTo(petugas::class,'id_petugas','id_petugas');
      }
 }

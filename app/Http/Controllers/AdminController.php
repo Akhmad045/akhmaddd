@@ -16,10 +16,15 @@ class AdminController extends Controller
     // utama
     public function utama(){
         $p = new pembayaran();
-        
+ 
         return view('admin.utama', ['data'=> $p->all()]);
     }
-    
+// history
+    public function history(){
+        $p = new pembayaran();
+        
+        return view('admin.history', ["data"=> $p->with(['petugas','siswa.spp'])->get()]);
+    }
     // login
     public function login()
     {
@@ -34,6 +39,7 @@ class AdminController extends Controller
                 'datapetugas'=> $cek->first()
             ]);
             return redirect('utama');
+            // (return response()->json(session('datapetugas')->id_petugas))
         }
     }
 
@@ -42,23 +48,22 @@ class AdminController extends Controller
     {
         $s = new siswa();
         $p = new spp();
-        return view("admin.pembayaran");
+        return view("admin.pembayaran",['datasiswa'=>$s->all(),'dataspp'=>$p->all()]);
     }
     public function entri(Request $request)
     {
         $tes = $request->validate([
-            'id_petugas'=>'required|max:4',
-            'nisn'=>'required|max:10',
+            'nisn'=>'required',
             'tgl_bayar'=>'required|date',
             'bulan_dibayar'=>'required|max:8',
             'tahun_dibayar'=>'required|max:4',
-            'id_spp'=>'required|max:4',
+            'id_spp'=>'required',
             'jumlah_bayar'=>'required'
 
         ]);
         $m = new pembayaran();
         $m->create([
-        'id_petugas'=>$request->id_petugas,
+        'id_petugas'=>session('datapetugas')->id_petugas,
         'nisn'=>$request->nisn,
         'tgl_bayar'=>$request->tgl_bayar,
         'bulan_dibayar'=>$request->bulan_dibayar    ,
